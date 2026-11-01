@@ -34,65 +34,6 @@ The pipeline converts this explicitly to `taker_side` before computing
 order-flow metrics.
 
 
-docker exec kafka /opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe
-Topic: coinbase.trades.dlq      TopicId: iOlxTpzSSRaAXBq6Dt5FgQ       PartitionCount: 1       ReplicationFactor: 1 Configs: min.insync.replicas=1
-        Topic: coinbase.trades.dlq      Partition: 0    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-Topic: coinbase.trades.raw      TopicId: kGFYO9GOT-Cg-G-GBDnYrQ       PartitionCount: 1       ReplicationFactor: 1 Configs: min.insync.replicas=1
-        Topic: coinbase.trades.raw      Partition: 0    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-Topic: coinbase.heartbeats.raw  TopicId: YTkV5Dk_TqCQs3e6QZXpIg       PartitionCount: 1       ReplicationFactor: 1 Configs: min.insync.replicas=1
-        Topic: coinbase.heartbeats.raw  Partition: 0    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-Topic: __consumer_offsets       TopicId: 3iG6bD0MTmG26b_jtbMxKw       PartitionCount: 50      ReplicationFactor: 1 Configs: compression.type=producer,min.insync.replicas=1,cleanup.policy=compact,segment.bytes=104857600
-        Topic: __consumer_offsets       Partition: 0    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 1    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 2    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 3    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 4    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 5    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 6    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 7    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 8    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 9    Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 10   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 11   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 12   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 13   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 14   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 15   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 16   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 17   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 18   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 19   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 20   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 21   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 22   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 23   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 24   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 25   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 26   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 27   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 28   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 29   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 30   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 31   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 32   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 33   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 34   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 35   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 36   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 37   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 38   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 39   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 40   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 41   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 42   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 43   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 44   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 45   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 46   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 47   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 48   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-        Topic: __consumer_offsets       Partition: 49   Leader: 1     Replicas: 1     Isr: 1  Elr:    LastKnownElr: 
-
 
 # PRODUCER
 Coinbase WS ──► parse ──► route by type ──► validate ──► Kafka
